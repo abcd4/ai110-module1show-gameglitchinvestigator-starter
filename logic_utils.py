@@ -11,14 +11,37 @@ def parse_guess(raw: str):
     """
     raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
 
-
+#FIXED: Too high/too low game logic
 def check_guess(guess, secret):
     """
     Compare guess to secret and return (outcome, message).
 
-    outcome examples: "Win", "Too High", "Too Low"
+    outcome examples: "Win", "Too High", "Too Low", "Out of Range"
     """
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+    try:
+        numeric_guess = int(guess)
+    except (TypeError, ValueError):
+        numeric_guess = None
+
+    if numeric_guess is not None and (numeric_guess < 1 or numeric_guess > 100):
+        return "Out of Range", "🚫 Guess must be between 1 and 100."
+
+    if guess == secret:
+        return "Win", "🎉 Correct!"
+
+    try:
+        if guess > secret:
+            return "Too High", "📉 Go LOWER!"
+        else:
+            return "Too Low", "📈 Go HIGHER!"
+    except TypeError:
+        g = str(guess)
+        s = str(secret)
+        if g == s:
+            return "Win", "🎉 Correct!"
+        if int(g) > int(s):
+            return "Too High", "📉 Go LOWER!"
+        return "Too Low", "📈 Go HIGHER!"
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):

@@ -25,19 +25,20 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- The game's purpose is to allow users to guess a secret number within 8 attempts, while providing hints along the way that help the user make new guesses.
+- A key bugs that I found were that the hints that the game provided were the opposite of what the user should guess. Additionally, I found that when a number out of the game's range was guessed, there was no message indicating that the user had made a guess out of the range.
+- To fix the hint bug, I fixed the logic so that when a guess is to high, it hints the user to make a lower guess and vice versa. To fix the out of range bug, I added a check that ensured that the user's guess was within 1 and 100 inclusive. If it wasn't, the user would receive a message indicating so.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. User enters a guess of 8
+2. Game returns "Too Low"
+3. User enters a guess of 70
+4. Game returns "Too High"
+5. User enters a guess of 58
+6. Game ends with correct guess an provides a final score
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
