@@ -60,6 +60,14 @@ tests/test_game_logic.py .....                                           [100%]
 
 ============================== 5 passed in 0.01s ===============================
 
+Second time: 
+Bash Run game logic tests
+IN
+python -m pytest tests/test_game_logic.py -q 2>&1 | tail -20
+
+OUT
+.......                                                                  [100%]
+7 passed in 0.01s
 
 ## 🚀 Stretch Features
 
