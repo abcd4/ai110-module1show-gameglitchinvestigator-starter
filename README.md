@@ -49,6 +49,17 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 # pytest tests/
 # ========================= X passed in 0.XXs =========================
 ```
+First time: 
+ % python -m pytest
+============================= test session starts ==============================
+platform darwin -- Python 3.12.4, pytest-9.1.1, pluggy-1.6.0
+rootdir: /Users/nicoleonye/ai110-module1show-gameglitchinvestigator-starter
+collected 5 items                                                              
+
+tests/test_game_logic.py .....                                           [100%]
+
+============================== 5 passed in 0.01s ===============================
+
 
 ## 🚀 Stretch Features
 
